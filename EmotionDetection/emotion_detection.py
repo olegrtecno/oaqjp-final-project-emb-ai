@@ -32,6 +32,10 @@ def emotion_detector(text_to_analyse):
         emotions["dominant_emotion"] = dominant_emotion
 
         return emotions
+
+    elif (response.status_code == 400):
+        # Return the same dictionary with None value for each key
+        return {'anger': None, 'disgust': None, 'fear': None, 'joy': None, 'sadness': None, 'dominant_emotion': None}
     else:
-        # Return the empty dictionary in case of error
+        # Return the empty dictionary in case of other errors
         return {}
