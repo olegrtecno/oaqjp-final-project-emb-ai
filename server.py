@@ -26,14 +26,14 @@ def em_detector():
 
     # Initial displayed response string
     response_string = "For the given statement, the system response is "
-    
+
     # Go over all emotions detected and add them to the response
     keys = list(response.keys())
     for i in range(len(response)):
         # The dominant emotion is added at the end
         if keys[i] != "dominant_emotion":
             # While haven't reached the last emotion
-            if (i < (len(response)-2)):
+            if i < (len(response)-2):
                 response_string += f'\'{keys[i]}\': {response[keys[i]]}, '
             # Last emotion
             else:
